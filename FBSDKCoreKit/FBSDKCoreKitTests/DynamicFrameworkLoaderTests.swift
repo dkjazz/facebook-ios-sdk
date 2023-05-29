@@ -243,13 +243,15 @@ final class DynamicFrameworkLoaderTests: XCTestCase {
     )
   }
 
+#if !FBSDK_IDFA_DISALLOWED
   func testASIdentifierManagerClass() {
     XCTAssertTrue(
       fbsdkdfl_ASIdentifierManagerClass() is ASIdentifierManager.Type,
       "Should dynamically load the ASIdentifierManager class"
     )
   }
-
+#endif
+  
   func testSFSafariViewControllerClass() {
     XCTAssertTrue(
       fbsdkdfl_SFSafariViewControllerClass() is SFSafariViewController.Type,
